@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var sequelize = require('./db');
-var User = sequelize.import(__dirname + '\\models\\user');
+//var User = sequelize.import(__dirname + '\\models\\user');
 //Create table
 //User.sync({force: true}); // sync( {force: true}), to drop then create each time the app starts!
 
