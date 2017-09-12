@@ -16,8 +16,11 @@ router.post('/', function(req, res) {
 	Profile
 	//objects must match the model 
 	.create({ 
-	   	profile: profile,
-	   	logType: logType,
+	   	firstName: firstName,
+	   	lastName: lastName,
+	   	age: age,
+	   	weight: weight,
+	   	height: height,
 	   	owner: owner
 	   })
 

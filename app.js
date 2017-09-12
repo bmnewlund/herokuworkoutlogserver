@@ -7,7 +7,7 @@ var sequelize = require('./db');
 // var Profile =  sequelize.import(__dirname + '\\models\\profile');
 //var User = sequelize.import(__dirname + '\\models\\user');
 //Create table
-//User.sync({force: true}); // sync( {force: true}), to drop then create each time the app starts!
+// sync( {force: true}), to drop then create each time the app starts!
 
 
 sequelize.sync(); //To reset the table sync({ force: true })

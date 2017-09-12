@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
 			age: DataTypes.INTEGER,
 			weight: DataTypes.INTEGER,
 			height: DataTypes.INTEGER,
-
 		},{
 	});
 };
