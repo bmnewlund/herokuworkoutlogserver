@@ -1,3 +1,4 @@
+// Any request that passes through the system passes through this file
 var jwt = require('jsonwebtoken');
 var sequelize = require('../db');
 var User = sequelize.import('../models/user');
@@ -5,6 +6,7 @@ var User = sequelize.import('../models/user');
 module.exports = function(req, res, next) {
 	var sessionToken = req.headers.authorization;
 	
+	// this checkes to make sure that the requester has a user name and a token
 	if(!req.body.user && sessionToken){
 		jwt.verify(sessionToken, process.env.JWT_SECRET, function(err, decoded) {
 			if(decoded){

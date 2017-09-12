@@ -10,8 +10,12 @@ var sequelize = require('./db');
 
 sequelize.sync(); //To reset the table sync({ force: true })
 
+
+// This changes the data over to the json format
 app.use(bodyParser.json());
 
+
+// .use configures the data for express
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session'));
 

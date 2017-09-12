@@ -19,6 +19,7 @@ console.log(pass)
 			function createSuccess(user){
 			    var token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60*60*24});
 
+			    // This is what gets sent back
 				res.json({
 						user: user,
 						message: 'created',
