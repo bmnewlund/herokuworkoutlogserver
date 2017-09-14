@@ -10,7 +10,7 @@ router.post('/', function(req, res) {
         var age = req.body.profile.age;
         var weight = req.body.profile.weight;
         var height = req.body.profile.height;
-        var owner = req.user.id;
+        var user = req.user;
 
 	//methods
 	Profile
@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
 	   	age: age,
 	   	weight: weight,
 	   	height: height,
-	   	owner: owner
+	   	owner: user.id
 	   })
 
 		.then(
@@ -42,21 +42,21 @@ router.get('/', function(req, res) {
 	//user variable
 	var userid = req.user.id;
 	Profile
-	//findAll by owner method
-	.findAll({
-		where: { owner: userid }
-	})
-	.then(
-		//success
-		function findAllSuccess(data) {
-			// console.log(data);
-			res.json(data);
-		},
-		//failure
-		function findAllError(err) {
-			res.send(500, err.message);
-		}
-	);
+		//findAll by owner method
+		.findAll({
+			where: { owner: userid }
+		})
+		.then(
+			//success
+			function findAllSuccess(data) {
+				// console.log(data);
+				res.json(data);
+			},
+			//failure
+			function findAllError(err) {
+				res.send(500, err.message);
+			}
+		);
 });
 
 
